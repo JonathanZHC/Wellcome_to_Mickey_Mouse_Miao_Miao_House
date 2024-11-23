@@ -1,0 +1,14 @@
+<!--- ToDo: write controller launch script. think about how to import the .yaml file from config -->
+<!--- if you have no ide what to do, start here: http://wiki.ros.org/roslaunch/XML -->
+<!--- also check point 2 here: http://wiki.ros.org/rosparam -->
+
+<launch>
+  
+  <!-- Start the controller node -->
+  <node name="controller_node" pkg="controller_pkg" type="controller_node" output="screen" />
+
+  <!-- Load parameters into /controller_node namespace -->
+  <rosparam command="load" file="$(find controller_pkg)/config/controller_params.yaml" ns="controller_node" />
+
+</launch>
+
